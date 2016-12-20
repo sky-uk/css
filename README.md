@@ -5,6 +5,8 @@ Our approach to CSS
 ## Contents
 
 * [Installation](#installation)
+* [Writing CSS](#writing-css)
+  * [Formatting](#formatting)
 * [Versioning](#versioning)
 * [Champions](#champions)
 
@@ -19,6 +21,14 @@ After installing, we recommend creating a symbolic link in the route of your pro
 ```
 $ ln -s node_modules/sky-css-lint/.stylelintrc .stylelintrc
 ```
+
+## Writing CSS
+
+TODO
+
+### Formatting
+
+TODO
 
 ## Versioning
 
