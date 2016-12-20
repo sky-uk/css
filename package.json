@@ -1,0 +1,29 @@
+{
+  "name": "sky-css-style-guide",
+  "version": "1.0.0",
+  "description": "Sky's CSS Style Guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sky-uk/css.git"
+  },
+  "keywords": [
+    "css",
+    "lint"
+  ],
+  "author": "Sky UK",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sky-uk/css/issues"
+  },
+  "homepage": "https://github.com/sky-uk/css#readme",
+  "dependencies": {
+    "stylelint": "^7.6.0",
+    "stylelint-order": "^0.2.2",
+    "stylelint-scss": "^1.3.4",
+    "stylelint-selector-bem-pattern": "^1.0.0"
+  }
+}
