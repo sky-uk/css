@@ -1,5 +1,5 @@
 {
-  "name": "sky-css-style-guide",
+  "name": "sky-css-lint",
   "version": "1.0.0",
   "description": "Sky's CSS Style Guide",
   "main": "index.js",

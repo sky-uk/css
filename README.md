@@ -17,7 +17,7 @@ $ npm install github:sky-uk/css --save
 After installing, we recommend creating a symbolic link in the route of your project to reference the Style Guide's configuration:
 
 ```
-$ ln -s node_modules/sky-css-style-guide/.stylelintrc .stylelintrc
+$ ln -s node_modules/sky-css-lint/.stylelintrc .stylelintrc
 ```
 
 ## Versioning
