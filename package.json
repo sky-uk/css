@@ -23,7 +23,7 @@
   "dependencies": {
     "stylelint": "^7.6.0",
     "stylelint-order": "^0.2.2",
-    "stylelint-scss": "^1.3.4",
+    "stylelint-scss": "^1.4.1",
     "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }
