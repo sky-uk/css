@@ -21,7 +21,8 @@ Our approach to CSS
 ## Writing CSS
 
 ### Architecture
-TODO
+
+Style vs. Structure
 
 ### Selectors
 It's important we keep code transparent and self-documented when it comes to naming our selectors. 
@@ -50,10 +51,10 @@ For more information, read [Harry Roberts'](https://github.com/csswizardry/) art
 ### Formatting
 TODO
 
-### Namespacing
-TODO
-
 ### Readings
+- [CSS Guidelines](http://cssguidelin.es/)
+- [idiomatic-css](https://github.com/necolas/idiomatic-css)
+- [OOCSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
 
 ---
 
