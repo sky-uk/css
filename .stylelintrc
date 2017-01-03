@@ -90,7 +90,7 @@
     } ],
     "scss/at-extend-no-missing-placeholder": true,
     "scss/at-import-no-partial-leading-underscore": true,
-    "scss/at-mixin-argumentless-call-parentheses": true,
+    "scss/at-mixin-argumentless-call-parentheses": always,
     "scss/dollar-variable-colon-space-before": "never",
     "scss/double-slash-comment-whitespace-inside": "always",
     "scss/operator-no-newline-before": true,
