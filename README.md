@@ -11,7 +11,7 @@ Our approach to CSS
 * [Selectors](#selectors)
 * [Properties](#properties)
 * [Formatting](#formatting)
-* [Extending and Modifying](#extending-and-moidfying)
+* [Extending and Modifying](#extending-and-modifying)
 * [Resources](#resources)
 
 ### Linter
@@ -26,22 +26,19 @@ Our approach to CSS
 
 ### Architecture
 
-* Style vs. Structure
-* DRY
+TODO: General Principles - DRY, OOCSS
 
+Project stylesheets should be structured following closely to the principles of [ITCSS](https://medium.com/@jordankoschei/how-i-shrank-my-css-by-84kb-by-refactoring-with-itcss-2e8dafee123a#.7gdzbrk1m), imported in the following order for greater control over re-usability and specificity:
 
-#### Project Structure
+0. **Settings** - Global configuration and variables.
+0. **Tools** - Mixins and functions.
+0. **Generic** - High-level styles such as resets and [normalize.css](https://github.com/necolas/normalize.css).
+0. **Elements** - Base HTML styling.
+0. **Objects** - Common non-cosmetic structural design patterns.
+0. **Components** - Specific cosmetic elements of UI.
+0. ~~Trumps~~ **Utilities** - Helpers and overrides.
 
-Project styles should be structured following closely to the principles of [ITCSS](https://medium.com/@jordankoschei/how-i-shrank-my-css-by-84kb-by-refactoring-with-itcss-2e8dafee123a#.7gdzbrk1m), imported in the following order for greater control over specificity:
-
-0. Settings
-0. Tools
-0. Generic
-0. Base
-0. Objects
-0. Components
-0. ~~Trumps~~ Utilities
-
+TODO: Toolkit example
 
 ### Selectors
 
@@ -118,7 +115,7 @@ Properties should be ordered in the following manner (a style similar to [Dropbo
   * `display`, `position`, `margin`, `padding`, `width`, `height`, `box-sizing`, `overflow` etc.
 0. Typography
   * `font-*`, `line-height`, `text-*`, `letter-spacing` etc.
-0. Stylistic
+0. Cosmetic
   * `color`, `background-*`, `border-*`, `animation`, `transition` etc.
 0. Native interaction
   * `appearance`, `cursor`, `user-select`, `pointer-events` etc.
@@ -140,12 +137,15 @@ Definining separately:
 ```css
 
 .c-example {
+  TODO
 }
 
 .c-example.is-active {
+  TODO
 }
 
 .c-example--large {
+  TODO
 }
 
 ```
@@ -158,15 +158,24 @@ TODO
 
 :warning: **Never** use `@extend`.
 
+TODO
+
 ### Resources
 
-#### Readings
+#### Reference
 
+* [CSS Almanac (CSS-Tricks)](https://css-tricks.com/almanac/)
+* [cssreference.io](http://cssreference.io/)
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+
+#### Guides
+
+* [Code Guide](http://codeguide.co/)
 * [CSS Guidelines](http://cssguidelin.es/)
 * [idiomatic-css](https://github.com/necolas/idiomatic-css)
 * [OOCSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
 
-#### Other CSS Style Guides
+#### Organisation Style Guides
 
 * [Airbnb](https://github.com/airbnb/css)
 * [Dropbox](https://github.com/dropbox/css-style-guide)
