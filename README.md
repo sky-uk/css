@@ -117,30 +117,21 @@ Following a prefix convention provides better insight into a class' purpose for 
 
 ### Properties
 
-#### Ordering
-
 Properties should be ordered in the following manner (a style similar to [Dropbox](https://github.com/dropbox/css-style-guide#rule-ordering)) to promote readability:
 
-0. Structure
-  * `display`, `position`, `margin`, `padding`, `width`, `height`, `box-sizing`, `overflow` etc.
-0. Typography
-  * `font-*`, `line-height`, `text-*`, `letter-spacing` etc.
-0. Cosmetic
-  * `color`, `background-*`, `border-*`, `animation`, `transition` etc.
-0. Native interaction
-  * `appearance`, `cursor`, `user-select`, `pointer-events` etc.
-0. [@-rules](https://www.sitepoint.com/sass-basics-rules-directives/)
-  * `@include` use your previously-defined mixins here.
-0. Pseudo-elements
-  * `::before`, `::after` etc.
-0. Pseudo-classes
-  * `:hover`, `:focus`, `:active` etc.
-0. Nested elements
+0. **Structure** - `display`, `position`, `margin`, `padding`, `width`, `height`, `box-sizing`, `overflow` etc.
+0. **Typography** - `font-*`, `line-height`, `text-*`, `letter-spacing` etc.
+0. **Cosmetic** - `color`, `background-*`, `border-*`, `animation`, `transition` etc.
+0. **Native interaction** - `appearance`, `cursor`, `user-select`, `pointer-events` etc.
+0. [**@-rules**](https://www.sitepoint.com/sass-basics-rules-directives/) - `@include` use your previously-defined mixins here.
+0. **Pseudo-elements** - `::before`, `::after` etc.
+0. **Pseudo-classes** - `:hover`, `:focus`, `:active` etc.
+0. **Nested elements**
 
 Definining separately:
 
-0. [State classes](#states)
-0. [Modifier classes](#bem)
+0. [**State classes**](#states)
+0. [**Modifier classes**](#bem)
 
 ##### Example
 
@@ -168,7 +159,25 @@ TODO
 
 :warning: **Never** use `@extend`.
 
-TODO
+Extending styles isn't flexible and leads to bloated stylesheets. When re-building common styles, `@mixin`s are always a more powerful and stable approach.
+
+:warning: **Never** directly overwrite a previously defined class.
+
+Avoid the confusion of selectors being defined in multiple places by using a new [BEM](#bem) `--modifier` class.
+
+```css
+/* .c-example is a component defined earlier in the project */
+
+/* Don't overwrite the class */
+.c-example {
+  color: red;
+}
+
+/* Do create a new `--modifier` class */
+.c-example--error {
+  color: red;
+}
+```
 
 ### Resources
 
@@ -200,7 +209,7 @@ TODO
 Our CSS linter runs on [Stylelint](https://github.com/stylelint/stylelint), you can install the conguration by running:
 
 ```
-$ npm install github:sky-uk/css --save
+$ npm install sky-css-lint --save
 ```
 
 After installing, we recommend creating a symbolic link in the route of your project to reference the Style Guide's configuration:
