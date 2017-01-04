@@ -6,8 +6,8 @@ Our approach to CSS
 
 ### Writing CSS
 
-* [Architecture](#architecture)
 * [Template](#template)
+* [Architecture](#architecture)
 * [Selectors](#selectors)
 * [Properties](#properties)
 * [Formatting](#formatting)
@@ -23,6 +23,16 @@ Our approach to CSS
 ---
 
 ## Writing CSS
+
+### Template
+
+Before diving into the details of CSS coding style, you can find a Sky-conformant `.scss` template over at [git.io/template](https://git.io/template).
+
+Instantly get started with:
+
+```
+curl -L git.io/template -o _<your-file-name>.scss
+```
 
 ### Architecture
 
