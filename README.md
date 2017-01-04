@@ -5,13 +5,17 @@ Our approach to CSS
 ## Contents
 
 ### Writing CSS
+
 * [Architecture](#architecture)
+* [Template](#template)
 * [Selectors](#selectors)
+* [Properties](#properties)
 * [Formatting](#formatting)
-* [Extending](#extending)
-* [Readings](#readings)
+* [Extending and Modifying](#extending-and-moidfying)
+* [Resources](#resources)
 
 ### Linter
+
 * [Installation](#installation)
 * [Versioning](#versioning)
 * [Champions](#champions)
@@ -22,21 +26,54 @@ Our approach to CSS
 
 ### Architecture
 
-Style vs. Structure
+* Style vs. Structure
+* DRY
 
 ### Selectors
+
 It's important we keep code transparent and self-documented when it comes to naming our selectors. 
 
+* **Do** use classes.
+* **Don't** use html tags, IDs or qualifying type.
+
+#### Specificity
+
+By following the steps above (using classes and limited nesting) conflicts with specificity shouldn't be a problem.
+
+:warning: **Never** use `!important`
+
+If you're struggling to ovverride styles, battling specificty, the safest option is to [chain the selector to itself](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity). In SCSS we can achieve this by:
+
+```css
+/**
+ * Doubling up a selector's specificity in SCSS.
+ *
+ * 1. Outputs as `.c-example.c-example`
+ *
+ */
+
+.c-example {
+  color: #4a4a4a;
+
+  &#{&} { /* [1] */
+    text-decoration: none;
+  }
+}
+```
+
 #### BEM
+
 TODO
 
 #### States
-- `is-`
-- `has-` 
+
+* `is-`
+* `has-` 
 
 State prefixes signify that the piece of UI in question is currently styled a certain way because of a state or condition (SMACSS). It tells us that the DOM currently has a temporary, optional, or short-lived style applied to it due to a certain state being invoked.
 
 #### Namespacing
+
 Following a prefix convention provides better insight into a class' purpose for other developers to work with.
 
 For more information, read [Harry Roberts'](https://github.com/csswizardry/) article [More Transparent UI Code with Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/).
@@ -48,13 +85,71 @@ For more information, read [Harry Roberts'](https://github.com/csswizardry/) art
 * `js-` signifies that this piece of the DOM has some **behaviour** acting upon it, and that JavaScript binds onto it to provide that behaviour. If you're not a developer working with JavaScript, leave these well alone.
 * `qa-` signifies that a **QA or Test Engineering** team is running an automated UI test which needs to find or bind onto these parts of the DOM. Like the JavaScript namespace, this reserves hooks in the DOM for non-CSS purposes.
 
+
+
+### Properties
+
+#### Ordering
+
+Properties should be ordered in the following manner (a style similar to [Dropbox](https://github.com/dropbox/css-style-guide#rule-ordering)) to promote readability:
+
+0. Structure
+  * `display`, `position`, `margin`, `padding`, `width`, `height`, `box-sizing`, `overflow` etc.
+0. Typography
+  * `font-*`, `line-height`, `text-*`, `letter-spacing` etc.
+0. Stylistic
+  * `color`, `background-*`, `border-*`, `animation`, `transition` etc.
+0. Native interaction
+  * `appearance`, `cursor`, `user-select`, `pointer-events` etc.
+0. [@-rules](https://www.sitepoint.com/sass-basics-rules-directives/)
+  * `@include` use your previously-defined mixins here.
+0. Pseudo-elements
+  * `::before`, `::after` etc.
+0. Pseudo-classes
+  * `:hover`, `:focus`, `:active` etc.
+0. Nested elements
+
+Definining separately:
+
+0. [State classes](#states)
+0. [Modifier classes](#bem)
+
+##### Example
+
+```css
+
+.c-example {
+}
+
+.c-example.is-active {
+}
+
+.c-example--large {
+}
+
+```
+
 ### Formatting
+
 TODO
 
-### Readings
-- [CSS Guidelines](http://cssguidelin.es/)
-- [idiomatic-css](https://github.com/necolas/idiomatic-css)
-- [OOCSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
+### Extending and Modifying
+
+:warning: **Never** use `@extend`.
+
+### Resources
+
+#### Readings
+
+* [CSS Guidelines](http://cssguidelin.es/)
+* [idiomatic-css](https://github.com/necolas/idiomatic-css)
+* [OOCSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
+
+#### Other CSS Style Guides
+
+* [Airbnb](https://github.com/airbnb/css)
+* [Dropbox](https://github.com/dropbox/css-style-guide)
+* [Primer (GitHub)](http://primercss.io/guidelines/)
 
 ---
 
