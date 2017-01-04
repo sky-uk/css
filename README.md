@@ -28,7 +28,20 @@ Our approach to CSS
 
 * Style vs. Structure
 * DRY
-* Import order
+
+
+#### Project Structure
+
+Project styles should be structured following closely to the principles of [ITCSS](https://medium.com/@jordankoschei/how-i-shrank-my-css-by-84kb-by-refactoring-with-itcss-2e8dafee123a#.7gdzbrk1m), imported in the following order for greater control over specificity:
+
+0. Settings
+0. Tools
+0. Generic
+0. Base
+0. Objects
+0. Components
+0. ~~Trumps~~ Utilities
+
 
 ### Selectors
 
@@ -36,7 +49,11 @@ It's important we keep code transparent and self-documented when it comes to nam
 
 :x: **Don't**
 
-* **Don't** use html tags, IDs or qualifying type.
+* **Don't** use `html` tags in selectors.
+* **Don't** use IDs (`#`) in selectors.
+* **Don't** uncessarily nest selectors.
+  * Try to keep selectors flat, at the same level of specificity.
+  * Avoid going more than 2 levels deep. 
 
 :white_check_mark: **Do**
 
@@ -44,7 +61,7 @@ It's important we keep code transparent and self-documented when it comes to nam
 
 #### Specificity
 
-By following the steps above (using classes and limited nesting) conflicts with specificity shouldn't be a problem.
+By following the steps above (specifically by using classes and limited nesting) conflicts with specificity shouldn't be a problem.
 
 :warning: **Never** use `!important`
 
@@ -81,8 +98,6 @@ State prefixes signify that the piece of UI in question is currently styled a ce
 #### Namespacing
 
 Following a prefix convention provides better insight into a class' purpose for other developers to work with.
-
-For more information, read [Harry Roberts'](https://github.com/csswizardry/) article [More Transparent UI Code with Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/).
 
 * `o-` signifies that this class is an **Object**, and that it may be used in any number of unrelated contexts to the one you can currently see it in. :warning: Making modifications to these types of class could potentially have knock-on effects in a lot of other unrelated places.
 * `c-` signifies that this class is a **Component**. This is a concrete, implementation-specific piece of UI. All of the changes you make to its styles should be detectable in the context you're currently looking at. Modifying on top of these styles should be safe and have no side effects.
