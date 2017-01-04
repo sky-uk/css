@@ -28,13 +28,19 @@ Our approach to CSS
 
 * Style vs. Structure
 * DRY
+* Import order
 
 ### Selectors
 
 It's important we keep code transparent and self-documented when it comes to naming our selectors. 
 
-* **Do** use classes.
+:x: **Don't**
+
 * **Don't** use html tags, IDs or qualifying type.
+
+:white_check_mark: **Do**
+
+* **Do** use classes.
 
 #### Specificity
 
