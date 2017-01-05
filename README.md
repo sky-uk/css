@@ -36,7 +36,7 @@ curl -L git.io/template -o _<your-file-name>.scss
 
 ### Architecture
 
-TODO: General Principles - DRY, OOCSS
+TODO: General Principles - DRY, OOCSS, Variables, tools, sass-maps
 
 Project stylesheets should be structured following closely to the principles of [ITCSS](https://medium.com/@jordankoschei/how-i-shrank-my-css-by-84kb-by-refactoring-with-itcss-2e8dafee123a#.7gdzbrk1m), imported in the following order for greater control over re-usability and specificity:
 
@@ -93,14 +93,86 @@ If you're struggling to ovverride styles, battling specificty, the safest option
 
 #### BEM
 
-TODO
+**B**lock, **E**lement, **M**odifier
+
+[BEM](http://getbem.com/naming/) is naming convention that aims to imporve readability and re-usability. 
+
+All CSS class names should follow the BEM pattern.
+
+##### Block
+
+A block represents an independent component and should **specifically** describe its purpose.
+
+```css
+<div class="block"></div>
+```
+
+For more detail on BEM blocks, visit [bem.info](https://en.bem.info/methodology/quick-start/#block).
+
+##### Element
+
+Elements represent parts of a block and cannot be used separately, they have no standalone meaning.
+
+An element should be named to describe its purpose, prefixed with a double underscore `__` to separate from the block.
+
+```css
+<div class="block">
+  <div class="block__element">
+  </div>
+</div>
+```
+
+:warning: **Don't** create elements inside elements (e.g. `.block__element__element`). Consider creating a new block for the parent element instead.
+
+For more detail on BEM
+elements, visit [bem.info](https://en.bem.info/methodology/quick-start/#element).
+
+##### Modifier
+
+Modifiers define a change in cosmetics, used alongside a block or element.
+
+Changes in state shouldn't be dictated by modifiers, and are handled [slightly differently](#states).
+
+A modifier should be named to describe its purpose, prefixed with a double hyphen `--` to separate from the block or element.
+
+```css
+<div class="block block--modifier">
+  <div class="block__element">
+  </div>
+</div>
+```
+
+and / or
+
+```css
+<div class="block">
+  <div class="block__element block__element--modifier">
+  </div>
+</div>
+```
+
+For more detail on BEM
+modifiers, visit [bem.info](https://en.bem.info/methodology/quick-start/#modifier).
 
 #### States
 
 * `is-`
 * `has-` 
 
-State prefixes signify that the piece of UI in question is currently styled a certain way because of a state or condition (SMACSS). It tells us that the DOM currently has a temporary, optional, or short-lived style applied to it due to a certain state being invoked.
+State prefixes signify that the piece of UI in question is currently styled a certain way because of a [state or condition](https://smacss.com/book/type-state). It tells us that the DOM currently has a temporary, optional, or short-lived style applied to it due to a certain state being invoked.
+
+```css
+<div class="c-example is-active"></div>
+```
+
+or
+
+```css
+<div class="c-example">
+  <div class="c-example__element is-active">
+  </div>
+</div>
+```
 
 #### Namespacing
 
@@ -112,8 +184,6 @@ Following a prefix convention provides better insight into a class' purpose for 
 * `t-` signifies that a class is responsible for adding a **Theme** to a view. It lets us know that UI Components' current cosmetic appearance may be due to the presence of a theme.
 * `js-` signifies that this piece of the DOM has some **behaviour** acting upon it, and that JavaScript binds onto it to provide that behaviour. If you're not a developer working with JavaScript, leave these well alone.
 * `qa-` signifies that a **QA or Test Engineering** team is running an automated UI test which needs to find or bind onto these parts of the DOM. Like the JavaScript namespace, this reserves hooks in the DOM for non-CSS purposes.
-
-
 
 ### Properties
 
@@ -172,7 +242,6 @@ Definining separately:
 * Leave an empty line at the end of a file.
 * Use leading zeros on decimal values (e.g. `0.5` instead of `.5`) for better readability.
 * Don't specify units for zero values (e.g. `0` instead of `0px`).
-
 
 ### Extending and Modifying
 
