@@ -4,7 +4,7 @@
 
 ## Contents
 
-### Writing CSS
+### Writing CSS / Sass
 
 * [Template](#template)
 * [Architecture](#architecture)
@@ -23,7 +23,7 @@
 
 ---
 
-## Writing CSS
+## Writing CSS / Sass
 
 ### Template
 
