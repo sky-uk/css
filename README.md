@@ -372,7 +372,7 @@ Run the following command to lint all `.scss` files in your project directory.:
 $ stylelint ./**/*.scss --syntax scss
 ```
 
-To ignore dependency folders such as `node_modules`, you'll need to create a [`.stylelintignore`](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#stylelintignore) file or use `--ignore-path` in the CLI.
+To ignore dependency folders such as `node_modules`, you'll need to create a [`.stylelintignore`](https://github.com/sky-uk/css/blob/master/.stylelintignore) file or use `--ignore-path` in the CLI.
 
 If you're using the lint without a symbolic link, you'll need to [`--config`](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/cli.md#usage) the source of the linter to `node_modules/sky-css-lint/.stylelintrc`.
 
