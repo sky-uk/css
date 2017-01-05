@@ -141,9 +141,15 @@ Definining separately:
   TODO
 }
 
+/* States
+  =========================================== */
+
 .c-example.is-active {
   TODO
 }
+
+/* Modifiers
+  =========================================== */
 
 .c-example--large {
   TODO
@@ -153,7 +159,20 @@ Definining separately:
 
 ### Formatting
 
-TODO
+* Use soft tabs (**2** spaces) for indentation.
+* Use lower-case hyphenated naming over camelCase.
+* Put a space before an opening bracket `{` and a new line after.
+* Put a new line before and after a closing bracket `}`.
+* Put a space after, but not before, a colon `:`.
+* Put a new line after a semi-colon `;`, with no space before.
+* Don't leave more than **1** line empty.
+* Use `// comment` commenting for non-outputted SCSS (e.g. settings, functions).
+* Use `/* comment */` commenting for all other SCSS 
+  * Outputted comments are useful for debugging, and can always be removed later in production using various build tools.
+* Leave an empty line at the end of a file.
+* Use leading zeros on decimal values (e.g. `0.5` instead of `.5`) for better readability.
+* Don't specify units for zero values (e.g. `0` instead of `0px`).
+
 
 ### Extending and Modifying
 
@@ -212,11 +231,23 @@ Our CSS linter runs on [Stylelint](https://github.com/stylelint/stylelint), you 
 $ npm install sky-css-lint --save
 ```
 
-After installing, we recommend creating a symbolic link in the route of your project to reference the Style Guide's configuration:
+After installing, create a symbolic link in the route of your project to reference the Style Guide's configuration:
 
 ```
 $ ln -s node_modules/sky-css-lint/.stylelintrc .stylelintrc
 ```
+
+### Usage
+
+Run the following command to lint all `.scss` files in your project directory.:
+
+```
+$ stylelint ./**/*.scss --syntax scss
+```
+
+To ignore dependency folders such as `node_modules`, you'll need to create a [`.stylelintignore`](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#stylelintignore) file or use `--ignore-path` in the CLI.
+
+If you're using the lint without a symbolic link, you'll need to [`--config`](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/cli.md#usage) the source of the linter to `node_modules/sky-css-lint/.stylelintrc`.
 
 ### Versioning
 
