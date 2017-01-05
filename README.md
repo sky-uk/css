@@ -99,7 +99,7 @@ All CSS class names should follow the BEM pattern.
 
 A block represents an independent component and should **specifically** describe its purpose.
 
-```css
+```html
 <div class="block"></div>
 ```
 
@@ -120,7 +120,7 @@ An element should be named to describe its purpose, prefixed with a double under
 
 In your stylesheet this would look like:
 
-```css
+```scss
 .block {
   /* block styles here */
   
@@ -163,7 +163,7 @@ and / or
 
 In your stylesheet this would look like:
 
-```css
+```scss
 .block {
   /* block styles here */
 }
@@ -231,7 +231,7 @@ Definining separately:
 
 ##### Example
 
-```css
+```scss
 .c-example {
   padding: 20px;
   position: relative;
@@ -279,7 +279,7 @@ Extending styles isn't flexible and leads to bloated stylesheets. When re-buildi
 
 Avoid the confusion of selectors being defined in multiple places by using a new [BEM](#bem) `--modifier` class.
 
-```css
+```scss
 /* .c-example is a component defined earlier in the project */
 
 /* Don't overwrite the class */
@@ -303,7 +303,7 @@ By following the steps above (specifically by using classes and limited nesting)
 
 If you're struggling to ovverride styles, battling specificty, the safest option is to [chain the selector to itself](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity). In SCSS we can achieve this by:
 
-```css
+```scss
 /**
  * Doubling up a selector's specificity in SCSS.
  *
