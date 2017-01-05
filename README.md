@@ -64,7 +64,7 @@ Project stylesheets should be structured following closely to the principles of 
 * Use `/* comment */` commenting for all other SCSS 
   * Outputted comments are useful for debugging, and can always be removed later in production using various build tools.
 * Leave an empty line at the end of a file.
-* Use leading zeros on decimal values (e.g. `0.5` instead of `.5`) for better readability.
+* Use leading zeros for decimal values (e.g. `0.5` instead of `.5`) for better readability.
 * Don't specify units for zero values (e.g. `0` instead of `0px`).
 
 [⬆ Back to contents](#contents)
@@ -77,7 +77,7 @@ It's important we keep code transparent and self-documented when it comes to nam
 
 * **Don't** use `html` tags in selectors.
 * **Don't** use IDs (`#`) in selectors.
-* **Don't** uncessarily nest selectors.
+* **Don't** unncessarily nest selectors.
   * Try to keep selectors flat, at the same level of specificity.
   * Avoid going more than 2 levels deep. 
 
@@ -91,7 +91,7 @@ It's important we keep code transparent and self-documented when it comes to nam
 
 **B**lock, **E**lement, **M**odifier
 
-[BEM](http://getbem.com/naming/) is naming convention that aims to imporve readability and re-usability. 
+[BEM](http://getbem.com/naming/) is naming convention that aims to improve readability and re-usability. 
 
 All CSS class names should follow the BEM pattern.
 
@@ -141,7 +141,7 @@ elements, visit [bem.info](https://en.bem.info/methodology/quick-start/#element)
 
 Modifiers define a change in cosmetics, used alongside a block or element.
 
-Changes in state shouldn't be dictated by modifiers, and are handled [slightly differently](#states).
+Changes in a state shouldn't be dictated by modifiers, and are handled [slightly differently](#states).
 
 A modifier should be named to describe its purpose, prefixed with a double hyphen `--` to separate from the block or element.
 
@@ -215,16 +215,17 @@ Following a prefix convention provides better insight into a class' purpose for 
 
 Properties should be ordered in the following manner (a style similar to [Dropbox](https://github.com/dropbox/css-style-guide#rule-ordering)) to promote readability:
 
+0. [**@-rules**](https://www.sitepoint.com/sass-basics-rules-directives/) - `@include` use your previously-defined mixins right at the start for ease of modification and readability. 
+  * Doesn't include `@media` rules, which should be placed at the end.
 0. **Structure** - `display`, `position`, `margin`, `padding`, `width`, `height`, `box-sizing`, `overflow` etc.
 0. **Typography** - `font-*`, `line-height`, `text-*`, `letter-spacing` etc.
 0. **Cosmetic** - `color`, `background-*`, `border-*`, `animation`, `transition` etc.
 0. **Native interaction** - `appearance`, `cursor`, `user-select`, `pointer-events` etc.
-0. [**@-rules**](https://www.sitepoint.com/sass-basics-rules-directives/) - `@include` use your previously-defined mixins here.
 0. **Pseudo-elements** - `::before`, `::after` etc.
 0. **Nested elements**
 0. **Pseudo-classes** - `:hover`, `:focus`, `:active` etc.
 
-Definining separately:
+Defining separately:
 
 0. [**State classes**](#states)
 0. [**Modifier classes**](#bem)
@@ -233,13 +234,13 @@ Definining separately:
 
 ```scss
 .c-example {
+  @include example-mixin();
   padding: 20px;
   position: relative;
   font-size: 1.25em;
   color: black;
   border: solid 1px grey;
   transition: border 1s ease;
-  @include example-mixin();
   
   .c-example__heading {
   	text-transform: uppercase;
@@ -301,7 +302,7 @@ By following the steps above (specifically by using classes and limited nesting)
 
 :warning: **Never** use `!important`
 
-If you're struggling to ovverride styles, battling specificty, the safest option is to [chain the selector to itself](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity). In SCSS we can achieve this by:
+If you're struggling to override styles, battling specificity, the safest option is to [chain the selector to itself](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity). In SCSS we can achieve this by:
 
 ```scss
 /**
@@ -351,7 +352,7 @@ If you're struggling to ovverride styles, battling specificty, the safest option
 
 ### Installation
 
-Our CSS linter runs on [Stylelint](https://github.com/stylelint/stylelint), you can install the conguration by running:
+Our CSS linter runs on [Stylelint](https://github.com/stylelint/stylelint), you can install the configuration by running:
 
 ```
 $ npm install sky-css-lint --save
