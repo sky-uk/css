@@ -19,7 +19,7 @@
 
 * [Installation](#installation)
 * [Versioning](#versioning)
-* [Champions](#champions)
+* [Maintainers](#maintainers)
 
 ---
 
@@ -35,6 +35,8 @@ Instantly get started with:
 curl -L git.io/template -o _<your-file-name>.scss
 ```
 
+[⬆ Back to contents](#contents)
+
 ### Architecture
 
 Project stylesheets should be structured following closely to the principles of [ITCSS](https://medium.com/@jordankoschei/how-i-shrank-my-css-by-84kb-by-refactoring-with-itcss-2e8dafee123a#.7gdzbrk1m), imported in the following order for greater control over re-usability and specificity:
@@ -46,6 +48,8 @@ Project stylesheets should be structured following closely to the principles of 
 0. **Objects** - Common non-cosmetic structural design patterns.
 0. **Components** - Specific cosmetic elements of UI.
 0. ~~Trumps~~ **Utilities** - Helpers and overrides.
+
+[⬆ Back to contents](#contents)
 
 ### Formatting
 
@@ -63,6 +67,8 @@ Project stylesheets should be structured following closely to the principles of 
 * Use leading zeros on decimal values (e.g. `0.5` instead of `.5`) for better readability.
 * Don't specify units for zero values (e.g. `0` instead of `0px`).
 
+[⬆ Back to contents](#contents)
+
 ### Selectors and Naming
 
 It's important we keep code transparent and self-documented when it comes to naming our selectors. 
@@ -78,6 +84,8 @@ It's important we keep code transparent and self-documented when it comes to nam
 :white_check_mark: **Do**
 
 * **Do** use classes.
+
+[⬆ Back to contents](#contents)
 
 #### BEM
 
@@ -173,6 +181,8 @@ Following a prefix convention provides better insight into a class' purpose for 
 * `js-` signifies that this piece of the DOM has some **behaviour** acting upon it, and that JavaScript binds onto it to provide that behaviour. If you're not a developer working with JavaScript, leave these well alone.
 * `qa-` signifies that a **QA or Test Engineering** team is running an automated UI test which needs to find or bind onto these parts of the DOM. Like the JavaScript namespace, this reserves hooks in the DOM for non-CSS purposes.
 
+[⬆ Back to contents](#contents)
+
 ### Properties
 
 Properties should be ordered in the following manner (a style similar to [Dropbox](https://github.com/dropbox/css-style-guide#rule-ordering)) to promote readability:
@@ -215,6 +225,8 @@ Definining separately:
 
 ```
 
+[⬆ Back to contents](#contents)
+
 ### Extending and Modifying
 
 :warning: **Never** use `@extend`.
@@ -238,6 +250,8 @@ Avoid the confusion of selectors being defined in multiple places by using a new
   color: red;
 }
 ```
+
+[⬆ Back to contents](#contents)
 
 ### Specificity
 
@@ -264,6 +278,8 @@ If you're struggling to ovverride styles, battling specificty, the safest option
 }
 ```
 
+[⬆ Back to contents](#contents)
+
 ### Resources
 
 #### Reference
@@ -284,6 +300,8 @@ If you're struggling to ovverride styles, battling specificty, the safest option
 * [Airbnb](https://github.com/airbnb/css)
 * [Dropbox](https://github.com/dropbox/css-style-guide)
 * [Primer (GitHub)](http://primercss.io/guidelines/)
+
+[⬆ Back to contents](#contents)
 
 ---
 
@@ -319,6 +337,6 @@ If you're using the lint without a symbolic link, you'll need to [`--config`](ht
 
 The CSS Style Guide follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
-### Champions
+### Maintainers
 
 The CSS Style Guide is maintained by the [Toolkit Champions](https://github.com/sky-uk/toolkit#champions).
