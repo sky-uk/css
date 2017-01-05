@@ -111,12 +111,26 @@ Elements represent parts of a block and cannot be used separately, they have no 
 
 An element should be named to describe its purpose, prefixed with a double underscore `__` to separate from the block.
 
-```css
+```html
 <div class="block">
   <div class="block__element">
   </div>
 </div>
 ```
+
+In your stylesheet this would look like:
+
+```css
+.block {
+  /* block styles here */
+  
+  .block__element {
+    /* element styles here */
+  }
+}
+```
+
+Avoid using the SCSS ampersand shortcut (`&__`) when defining elements, it'll make searching your codebase a lot less productive.
 
 :warning: **Don't** create elements inside elements (e.g. `.block__element__element`). Consider creating a new block for the parent element instead.
 
@@ -131,7 +145,7 @@ Changes in state shouldn't be dictated by modifiers, and are handled [slightly d
 
 A modifier should be named to describe its purpose, prefixed with a double hyphen `--` to separate from the block or element.
 
-```css
+```html
 <div class="block block--modifier">
   <div class="block__element">
   </div>
@@ -140,12 +154,26 @@ A modifier should be named to describe its purpose, prefixed with a double hyphe
 
 and / or
 
-```css
+```html
 <div class="block">
   <div class="block__element block__element--modifier">
   </div>
 </div>
 ```
+
+In your stylesheet this would look like:
+
+```css
+.block {
+  /* block styles here */
+}
+
+.block--modifier {
+  /* modifier styles here */
+}
+```
+
+Avoid using the SCSS ampersand shortcut (`&__`) when defining elements, it'll make searching your codebase a lot less productive.
 
 For more detail on BEM
 modifiers, visit [bem.info](https://en.bem.info/methodology/quick-start/#modifier).
@@ -157,13 +185,13 @@ modifiers, visit [bem.info](https://en.bem.info/methodology/quick-start/#modifie
 
 State prefixes signify that the piece of UI in question is currently styled a certain way because of a [state or condition](https://smacss.com/book/type-state). It tells us that the DOM currently has a temporary, optional, or short-lived style applied to it due to a certain state being invoked.
 
-```css
+```html
 <div class="c-example is-active"></div>
 ```
 
 or
 
-```css
+```html
 <div class="c-example">
   <div class="c-example__element is-active">
   </div>
@@ -193,8 +221,8 @@ Properties should be ordered in the following manner (a style similar to [Dropbo
 0. **Native interaction** - `appearance`, `cursor`, `user-select`, `pointer-events` etc.
 0. [**@-rules**](https://www.sitepoint.com/sass-basics-rules-directives/) - `@include` use your previously-defined mixins here.
 0. **Pseudo-elements** - `::before`, `::after` etc.
-0. **Pseudo-classes** - `:hover`, `:focus`, `:active` etc.
 0. **Nested elements**
+0. **Pseudo-classes** - `:hover`, `:focus`, `:active` etc.
 
 Definining separately:
 
@@ -204,25 +232,39 @@ Definining separately:
 ##### Example
 
 ```css
-
 .c-example {
-  TODO
+  padding: 20px;
+  position: relative;
+  font-size: 1.25em;
+  color: black;
+  border: solid 1px grey;
+  transition: border 1s ease;
+  @include example-mixin();
+  
+  .c-example__heading {
+  	text-transform: uppercase;
+  }
+  
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  	border: solid 1px black;
+  }
 }
 
 /* States
   =========================================== */
 
 .c-example.is-active {
-  TODO
+  border: solid 1px blue;
 }
 
 /* Modifiers
   =========================================== */
 
 .c-example--large {
-  TODO
+  font-size: 2.5em;
 }
-
 ```
 
 [⬆ Back to contents](#contents)
