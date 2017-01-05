@@ -1,6 +1,6 @@
 # Sky CSS Style Guide
 
-Our approach to CSS
+> Believe in Better CSS
 
 ## Contents
 
@@ -8,10 +8,11 @@ Our approach to CSS
 
 * [Template](#template)
 * [Architecture](#architecture)
-* [Selectors](#selectors)
-* [Properties](#properties)
 * [Formatting](#formatting)
+* [Selectors and Naming](#selectors-and-naming)
+* [Properties](#properties)
 * [Extending and Modifying](#extending-and-modifying)
+* [Specificity](#specificity)
 * [Resources](#resources)
 
 ### Linter
@@ -36,8 +37,6 @@ curl -L git.io/template -o _<your-file-name>.scss
 
 ### Architecture
 
-TODO: General Principles - DRY, OOCSS, Variables, tools, sass-maps
-
 Project stylesheets should be structured following closely to the principles of [ITCSS](https://medium.com/@jordankoschei/how-i-shrank-my-css-by-84kb-by-refactoring-with-itcss-2e8dafee123a#.7gdzbrk1m), imported in the following order for greater control over re-usability and specificity:
 
 0. **Settings** - Global configuration and variables.
@@ -48,9 +47,23 @@ Project stylesheets should be structured following closely to the principles of 
 0. **Components** - Specific cosmetic elements of UI.
 0. ~~Trumps~~ **Utilities** - Helpers and overrides.
 
-TODO: Toolkit example
+### Formatting
 
-### Selectors
+* Use soft tabs (**2** spaces) for indentation.
+* Use lower-case hyphenated naming over camelCase.
+* Put a space before an opening bracket `{` and a new line after.
+* Put a new line before and after a closing bracket `}`.
+* Put a space after, but not before, a colon `:`.
+* Put a new line after a semi-colon `;`, with no space before.
+* Don't leave more than **1** line empty.
+* Use `// comment` commenting for non-outputted SCSS (e.g. settings, functions).
+* Use `/* comment */` commenting for all other SCSS 
+  * Outputted comments are useful for debugging, and can always be removed later in production using various build tools.
+* Leave an empty line at the end of a file.
+* Use leading zeros on decimal values (e.g. `0.5` instead of `.5`) for better readability.
+* Don't specify units for zero values (e.g. `0` instead of `0px`).
+
+### Selectors and Naming
 
 It's important we keep code transparent and self-documented when it comes to naming our selectors. 
 
@@ -65,31 +78,6 @@ It's important we keep code transparent and self-documented when it comes to nam
 :white_check_mark: **Do**
 
 * **Do** use classes.
-
-#### Specificity
-
-By following the steps above (specifically by using classes and limited nesting) conflicts with specificity shouldn't be a problem.
-
-:warning: **Never** use `!important`
-
-If you're struggling to ovverride styles, battling specificty, the safest option is to [chain the selector to itself](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity). In SCSS we can achieve this by:
-
-```css
-/**
- * Doubling up a selector's specificity in SCSS.
- *
- * 1. Outputs as `.c-example.c-example`
- *
- */
-
-.c-example {
-  color: #4a4a4a;
-
-  &#{&} { /* [1] */
-    text-decoration: none;
-  }
-}
-```
 
 #### BEM
 
@@ -227,22 +215,6 @@ Definining separately:
 
 ```
 
-### Formatting
-
-* Use soft tabs (**2** spaces) for indentation.
-* Use lower-case hyphenated naming over camelCase.
-* Put a space before an opening bracket `{` and a new line after.
-* Put a new line before and after a closing bracket `}`.
-* Put a space after, but not before, a colon `:`.
-* Put a new line after a semi-colon `;`, with no space before.
-* Don't leave more than **1** line empty.
-* Use `// comment` commenting for non-outputted SCSS (e.g. settings, functions).
-* Use `/* comment */` commenting for all other SCSS 
-  * Outputted comments are useful for debugging, and can always be removed later in production using various build tools.
-* Leave an empty line at the end of a file.
-* Use leading zeros on decimal values (e.g. `0.5` instead of `.5`) for better readability.
-* Don't specify units for zero values (e.g. `0` instead of `0px`).
-
 ### Extending and Modifying
 
 :warning: **Never** use `@extend`.
@@ -264,6 +236,31 @@ Avoid the confusion of selectors being defined in multiple places by using a new
 /* Do create a new `--modifier` class */
 .c-example--error {
   color: red;
+}
+```
+
+### Specificity
+
+By following the steps above (specifically by using classes and limited nesting) conflicts with specificity shouldn't be a problem.
+
+:warning: **Never** use `!important`
+
+If you're struggling to ovverride styles, battling specificty, the safest option is to [chain the selector to itself](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity). In SCSS we can achieve this by:
+
+```css
+/**
+ * Doubling up a selector's specificity in SCSS.
+ *
+ * 1. Outputs as `.c-example.c-example`
+ *
+ */
+
+.c-example {
+  color: #4a4a4a;
+
+  &#{&} { /* [1] */
+    text-decoration: none;
+  }
 }
 ```
 
