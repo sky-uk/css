@@ -61,7 +61,7 @@ Project stylesheets should be structured following closely to the principles of 
 * Put a new line after a semi-colon `;`, with no space before.
 * Don't leave more than **1** line empty.
 * Use `// comment` commenting for non-outputted SCSS (e.g. settings, functions).
-* Use `/* comment */` commenting for all other SCSS 
+* Use `/* comment */` commenting for all other SCSS
   * Outputted comments are useful for debugging, and can always be removed later in production using various build tools.
 * Leave an empty line at the end of a file.
 * Use leading zeros for decimal values (e.g. `0.5` instead of `.5`) for better readability.
@@ -71,7 +71,7 @@ Project stylesheets should be structured following closely to the principles of 
 
 ### Selectors and Naming
 
-It's important we keep code transparent and self-documented when it comes to naming our selectors. 
+It's important we keep code transparent and self-documented when it comes to naming our selectors.
 
 :x: **Don't**
 
@@ -79,7 +79,7 @@ It's important we keep code transparent and self-documented when it comes to nam
 * **Don't** use IDs (`#`) in selectors.
 * **Don't** unncessarily nest selectors.
   * Try to keep selectors flat, at the same level of specificity.
-  * Avoid going more than 2 levels deep. 
+  * Avoid going more than 2 levels deep.
 
 :white_check_mark: **Do**
 
@@ -91,7 +91,7 @@ It's important we keep code transparent and self-documented when it comes to nam
 
 **B**lock, **E**lement, **M**odifier
 
-[BEM](http://getbem.com/naming/) is naming convention that aims to improve readability and re-usability. 
+[BEM](http://getbem.com/naming/) is naming convention that aims to improve readability and re-usability.
 
 All CSS class names should follow the BEM pattern.
 
@@ -123,7 +123,7 @@ In your stylesheet this would look like:
 ```scss
 .block {
   /* block styles here */
-  
+
   .block__element {
     /* element styles here */
   }
@@ -181,7 +181,7 @@ modifiers, visit [bem.info](https://en.bem.info/methodology/quick-start/#modifie
 #### States
 
 * `is-`
-* `has-` 
+* `has-`
 
 State prefixes signify that the piece of UI in question is currently styled a certain way because of a [state or condition](https://smacss.com/book/type-state). It tells us that the DOM currently has a temporary, optional, or short-lived style applied to it due to a certain state being invoked.
 
@@ -215,8 +215,7 @@ Following a prefix convention provides better insight into a class' purpose for 
 
 Properties should be ordered in the following manner (a style similar to [Dropbox](https://github.com/dropbox/css-style-guide#rule-ordering)) to promote readability:
 
-0. [**@-rules**](https://www.sitepoint.com/sass-basics-rules-directives/) - `@include` use your previously-defined mixins right at the start for ease of modification and readability. 
-  * Doesn't include `@media` rules, which should be placed at the end.
+0. **@include** - use your previously-defined mixins right at the start for ease of modification and readability.
 0. **Structure** - `display`, `position`, `margin`, `padding`, `width`, `height`, `box-sizing`, `overflow` etc.
 0. **Typography** - `font-*`, `line-height`, `text-*`, `letter-spacing` etc.
 0. **Cosmetic** - `color`, `background-*`, `border-*`, `animation`, `transition` etc.
@@ -224,6 +223,7 @@ Properties should be ordered in the following manner (a style similar to [Dropbo
 0. **Pseudo-elements** - `::before`, `::after` etc.
 0. **Nested elements**
 0. **Pseudo-classes** - `:hover`, `:focus`, `:active` etc.
+0. **@media** - media queries should be defined last for ease of modification and readability.
 
 Defining separately:
 
@@ -241,15 +241,19 @@ Defining separately:
   color: black;
   border: solid 1px grey;
   transition: border 1s ease;
-  
+
   .c-example__heading {
   	text-transform: uppercase;
   }
-  
+
   &:focus,
   &:hover {
     text-decoration: underline;
   	border: solid 1px black;
+  }
+
+  @media(min-width: 721px) {
+    font-size: 1em;
   }
 }
 
