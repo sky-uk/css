@@ -173,7 +173,7 @@ In your stylesheet this would look like:
 }
 ```
 
-Avoid using the SCSS ampersand shortcut (`&__`) when defining elements, it'll make searching your codebase a lot less productive.
+Avoid using the SCSS ampersand shortcut (`&--`) when defining elements, it'll make searching your codebase a lot less productive.
 
 For more detail on BEM
 modifiers, visit [bem.info](https://en.bem.info/methodology/quick-start/#modifier).
