@@ -2,7 +2,7 @@
 
 > Believe in Better CSS
 
-An evolving CSS / Sass Style Guide for Sky
+An Evolving CSS / Sass Style Guide for Sky
 
 ## Contents
 
