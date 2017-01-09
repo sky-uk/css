@@ -2,6 +2,8 @@
 
 > Believe in Better CSS
 
+An Evolving CSS / Sass Style Guide for Sky
+
 ## Contents
 
 ### Writing CSS / Sass
@@ -77,7 +79,7 @@ It's important we keep code transparent and self-documented when it comes to nam
 
 * **Don't** use `html` tags in selectors.
 * **Don't** use IDs (`#`) in selectors.
-* **Don't** unncessarily nest selectors.
+* **Don't** unnecessarily nest selectors.
   * Try to keep selectors flat, at the same level of specificity.
   * Avoid going more than 2 levels deep.
 
@@ -173,7 +175,7 @@ In your stylesheet this would look like:
 }
 ```
 
-Avoid using the SCSS ampersand shortcut (`&__`) when defining elements, it'll make searching your codebase a lot less productive.
+Avoid using the SCSS ampersand shortcut (`&--`) when defining elements, it'll make searching your codebase a lot less productive.
 
 For more detail on BEM
 modifiers, visit [bem.info](https://en.bem.info/methodology/quick-start/#modifier).
