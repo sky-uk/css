@@ -79,7 +79,7 @@ It's important we keep code transparent and self-documented when it comes to nam
 
 * **Don't** use `html` tags in selectors.
 * **Don't** use IDs (`#`) in selectors.
-* **Don't** unncessarily nest selectors.
+* **Don't** unnecessarily nest selectors.
   * Try to keep selectors flat, at the same level of specificity.
   * Avoid going more than 2 levels deep.
 
