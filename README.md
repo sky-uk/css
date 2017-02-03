@@ -244,7 +244,7 @@ Defining separately:
   border: solid 1px grey;
   transition: border 1s ease;
 
-  .c-example__heading {
+  &__heading {
   	text-transform: uppercase;
   }
 
