@@ -1,29 +1,60 @@
 {
-  "name": "sky-css-lint",
-  "version": "1.0.0",
-  "description": "Sky's CSS Style Guide",
+  "name": "stylelint-config-sky",
+  "version": "2.0.0",
+  "description": "Sky's CSS Stylelint configuration, following our Style Guide",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ."
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sky-uk/css.git"
   },
   "keywords": [
+    "sky",
+    "stylelint",
+    "stylelint-config",
+    "config",
     "css",
-    "lint"
+    "scss",
+    "styleguide"
   ],
   "author": "Sky UK",
+  "contributors": [
+    {
+      "name": "Joe Bell",
+      "url": "https://github.com/joebell93"
+    }
+  ],
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/sky-uk/css/issues"
   },
-  "homepage": "https://github.com/sky-uk/css#readme",
-  "dependencies": {
-    "stylelint": "^7.6.0",
+  "homepage": "https://github.com/sky-uk/css",
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "pre-commit": "^1.2.2",
+    "stylelint": "^7.8.0",
     "stylelint-order": "^0.2.2",
     "stylelint-scss": "^1.4.1",
     "stylelint-selector-bem-pattern": "^1.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^7.8.0",
+    "stylelint-order": "^0.2.2",
+    "stylelint-scss": "^1.4.1",
+    "stylelint-selector-bem-pattern": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb"
+    ]
   }
 }
