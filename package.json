@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ."
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sky-uk/css.git"
@@ -38,6 +41,7 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
+    "pre-commit": "^1.2.2",
     "stylelint": "^7.8.0",
     "stylelint-order": "^0.2.2",
     "stylelint-scss": "^1.4.1",
