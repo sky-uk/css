@@ -42,13 +42,11 @@
     "eslint-plugin-react": "^6.9.0",
     "pre-commit": "^1.2.2",
     "stylelint": "^7.8.0",
-    "stylelint-order": "^0.2.2",
     "stylelint-scss": "^1.4.1",
     "stylelint-selector-bem-pattern": "^1.0.0"
   },
   "peerDependencies": {
     "stylelint": "^7.8.0",
-    "stylelint-order": "^0.2.2",
     "stylelint-scss": "^1.4.1",
     "stylelint-selector-bem-pattern": "^1.0.0"
   },
