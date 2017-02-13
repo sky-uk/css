@@ -361,13 +361,15 @@ If you're struggling to override styles, battling specificity, the safest option
 Our CSS linter runs on [Stylelint](https://github.com/stylelint/stylelint), you can install the configuration by running:
 
 ```
-$ npm install sky-css-lint --save
+$ npm install stylelint-config-sky-uk --save
 ```
 
-After installing, create a symbolic link in the route of your project to reference the Style Guide's configuration:
+After installing, create/amend your `.stylelintrc` to extend the config:
 
 ```
-$ ln -s node_modules/sky-css-lint/.stylelintrc .stylelintrc
+{
+  "extends": "stylelint-config-sky-uk"
+}
 ```
 
 ### Usage
@@ -379,8 +381,6 @@ $ stylelint '**/*.scss' --syntax scss
 ```
 
 To ignore dependency folders such as `node_modules`, you'll need to create a [`.stylelintignore`](https://github.com/sky-uk/css/blob/master/.stylelintignore) file or use `--ignore-path` in the CLI.
-
-If you're using the lint without a symbolic link, you'll need to [`--config`](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/cli.md#usage) the source of the linter to `node_modules/sky-css-lint/.stylelintrc`.
 
 ### Versioning
 
