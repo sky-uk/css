@@ -361,14 +361,14 @@ If you're struggling to override styles, battling specificity, the safest option
 Our CSS linter runs on [Stylelint](https://github.com/stylelint/stylelint), you can install the configuration by running:
 
 ```
-$ npm install stylelint-config-sky --save
+$ npm install stylelint-config-sky-uk --save
 ```
 
 After installing, create/amend your `.stylelintrc` to extend the config:
 
 ```
 {
-  "extends": "stylelint-config-sky"
+  "extends": "stylelint-config-sky-uk"
 }
 ```
 
