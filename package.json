@@ -1,5 +1,5 @@
 {
-  "name": "stylelint-config-sky",
+  "name": "stylelint-config-sky-uk",
   "version": "2.0.0",
   "description": "Sky's CSS Stylelint configuration, following our Style Guide",
   "main": "index.js",
