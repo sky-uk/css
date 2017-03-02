@@ -148,7 +148,7 @@ module.exports = {
     'shorthand-property-no-redundant-values': true,
     'string-no-newline': true,
     'string-quotes': 'double',
-    'time-min-milliseconds': 100,
+    'time-min-milliseconds': 10,
     'unit-case': 'lower',
     'unit-no-unknown': true,
     'value-keyword-case': [
