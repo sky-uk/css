@@ -114,6 +114,9 @@ module.exports = {
     'rule-empty-line-before': [
       'always-multi-line',
       {
+        except: [
+          'first-nested',
+        ],
         ignore: [
           'after-comment',
         ],
@@ -145,7 +148,7 @@ module.exports = {
     'shorthand-property-no-redundant-values': true,
     'string-no-newline': true,
     'string-quotes': 'double',
-    'time-min-milliseconds': '100',
+    'time-min-milliseconds': 100,
     'unit-case': 'lower',
     'unit-no-unknown': true,
     'value-keyword-case': [
