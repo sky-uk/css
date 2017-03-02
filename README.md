@@ -125,10 +125,10 @@ In your stylesheet this would look like:
 ```scss
 .block {
   /* block styles here */
+}
 
-  .block__element {
-    /* element styles here */
-  }
+.block__element {
+  /* element styles here */
 }
 ```
 
@@ -244,19 +244,19 @@ Defining separately:
   border: solid 1px grey;
   transition: border 1s ease;
 
-  .c-example__heading {
-  	text-transform: uppercase;
-  }
-
   &:focus,
   &:hover {
     text-decoration: underline;
-  	border: solid 1px black;
+    border: solid 1px black;
   }
 
   @media(min-width: 721px) {
     font-size: 1em;
   }
+}
+
+.c-example__heading {
+  text-transform: uppercase;
 }
 
 /* States
