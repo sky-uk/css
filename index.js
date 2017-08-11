@@ -136,7 +136,7 @@ module.exports = {
     'selector-list-comma-space-after': 'always-single-line',
     'selector-list-comma-space-before': 'never',
     'selector-max-empty-lines': 0,
-    'selector-no-id': true,
+    'selector-max-id': 0,
     'selector-pseudo-class-case': 'lower',
     'selector-pseudo-class-no-unknown': true,
     'selector-pseudo-class-parentheses-space-inside': 'never',
