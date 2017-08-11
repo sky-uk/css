@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-sky-uk",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Sky's CSS Stylelint configuration, following our Style Guide",
   "main": "index.js",
   "scripts": {
@@ -41,14 +41,14 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "pre-commit": "^1.2.2",
-    "stylelint": "^7.9.0",
-    "stylelint-scss": "^1.4.3",
-    "stylelint-selector-bem-pattern": "^1.0.0"
+    "stylelint": "^8.0.0",
+    "stylelint-scss": "^2.0.1",
+    "stylelint-selector-bem-pattern": "^1.1.1"
   },
   "peerDependencies": {
-    "stylelint": "^7.9.0",
-    "stylelint-scss": "^1.4.3",
-    "stylelint-selector-bem-pattern": "^1.0.0"
+    "stylelint": "^8.0.0",
+    "stylelint-scss": "^2.0.1",
+    "stylelint-selector-bem-pattern": "^1.1.1"
   },
   "eslintConfig": {
     "extends": [
