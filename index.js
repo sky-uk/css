@@ -83,7 +83,7 @@ module.exports = {
     'length-zero-no-unit': true,
     'max-empty-lines': 1,
     'max-nesting-depth': [
-      2,
+      3,
       {
         ignore: [
           'blockless-at-rules',
